@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Caminho do Céu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Modal de Login -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLoginModal()">&times;</span>
+            <h2>Bem-vindo(a) ao Hospital Caminho do Céu</h2>
+            <p>Por favor, faça login para acessar sua conta.</p>
+            <input type="text" placeholder="Usuário" class="input-field">
+            <input type="password" placeholder="Senha" class="input-field">
+            <button class="submit-button">Entrar</button>
+        </div>
+    </div>
+
+    <!-- Cabeçalho -->
+    <header>
+        <div class="header-content">
+            <h1>Hospital Caminho do Céu</h1>
+            <button class="login-button" onclick="openLoginModal()">Efetuar Login</button>
+        </div>
+    </header>
+
+<!-- Carrossel -->
+<section class="carousel-container">
+    <div class="carousel" id="carousel">
+        <div class="carousel-item active">
+            <p><span class="emoji">❤️</span> Cuidado Humanizado</p>
+        </div>
+        <div class="carousel-item">
+            <p><span class="emoji">🏥</span> Estrutura Moderna</p>
+        </div>
+        <div class="carousel-item">
+            <p><span class="emoji">👨‍⚕️👩‍⚕️</span> Equipe Especializada</p>
+        </div>
+        <div class="carousel-item">
+            <p><span class="emoji">💊</span> Atendimento 24 Horas</p>
+        </div>
+    </div>
+    <div class="carousel-controls">
+        <button onclick="prev()">&#10094;</button>
+        <button onclick="next()">&#10095;</button>
+    </div>
+</section>
+
+
+    <!-- Sobre -->
+    <section id="equipe" class="equipe-container">
+        <h2>Conheça Nossa Equipe</h2>
+        <div class="equipe-list" id="equipeList">
+            <div class="equipe-card">
+                <div class="card-front">
+                    <img src="Mariana.jpg" alt="Dr. João">
+                    <h3>Dra. Mariana Cardoso</h3>
+                    <p>Psicóloga</p>
+                </div>
+                <div class="card-back">
+                    <h3>Dra. Mariana Cardoso</h3>
+                    <p>Especialista em neurociência e comportamento humano.</p>
+                </div>
+            </div>
+           
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,295 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('fundo hospital.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #2c3e50;
+    scroll-behavior: smooth;
+}
+
+/* Header */
+header {
+    background: rgba(0, 115, 230, 0.9);
+    color: white;
+    padding: 1rem 2rem;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+.login-button {
+    background: white;
+    color: #0073e6;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    background: #f1f1f1;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #555;
+}
+
+.input-field {
+    width: 100%;
+    padding: 0.6rem;
+    margin-top: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.submit-button {
+    background: #0073e6;
+    color: white;
+    padding: 0.7rem 1.2rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submit-button:hover {
+    background: #005bb5;
+}
+
+/* Carousel */
+.carousel-container {
+    position: relative;
+    max-width: 80%;
+    margin: 2rem auto;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+.carousel-item {
+    min-width: 100%;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    opacity: 0;
+    transform: scale(0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+    color: #2c3e50;
+}
+
+.carousel-item.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.carousel-controls button {
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+.carousel-controls button:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+
+/* Sobre */
+.sobre-container {
+    max-width: 80%;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Equipe */
+.equipe-container {
+    max-width: 80%;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.equipe-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.equipe-card {
+    width: 180px;
+    height: 250px;
+    perspective: 1000px;
+}
+
+.equipe-card .card-front, .equipe-card .card-back {
+    width: 100%;
+    height: 100%;
+    background: white;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.equipe-card .card-front {
+    z-index: 2;
+    transform: rotateY(0deg);
+}
+
+.equipe-card .card-back {
+    transform: rotateY(180deg);
+    text-align: center;
+}
+
+.equipe-card:hover .card-front {
+    transform: rotateY(-180deg);
+}
+
+.equipe-card:hover .card-back {
+    transform: rotateY(0deg);
+}
+
+.equipe-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 0.5rem;
+    border: 2px solid #0073e6;
+}
+
+.equipe-card h3 {
+    font-size: 1.1rem;
+    color: #0073e6;
+    margin: 0.5rem 0;
+}
+
+.equipe-card p {
+    font-size: 0.9rem;
+    color: #555;
+}
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+    .equipe-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .equipe-card {
+        width: 90%;
+        max-width: 300px;
+    }
+}
+
+/* Ajuste do z-index para o modal */
+#loginModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000; /* Certifique-se de que o modal sempre fica acima dos outros elementos */
+    justify-content: center;
+    align-items: center;
+}
+
+#loginModal .modal-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Ajuste de espaçamento para evitar sobreposição */
+body {
+    overflow-x: hidden;
+}
